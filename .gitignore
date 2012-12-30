@@ -161,3 +161,6 @@ pip-log.txt
 
 # Mac crap
 .DS_Store
+/zq-sm/spring-mvc-mybatis-sample-master/target/
+/zq-sm/zq-common/target/
+/zq-sm/mybatis-pagination-master/target/
