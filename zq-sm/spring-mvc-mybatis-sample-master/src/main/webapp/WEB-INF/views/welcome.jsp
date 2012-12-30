@@ -3,6 +3,10 @@
 <%@ page session="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <html>
 	<head>
 		<META http-equiv="Content-Type" content="text/html;charset=UTF-8">
@@ -27,6 +31,7 @@
 			</ul>
 			<ul>
 				<li><a href="blogs">Blogs</a></li>
+                                <li><a href="<%=basePath%>/account/getAllList">用户表操作  UserInfo</a></li>
 			</ul>
 		</div>
 	</body>

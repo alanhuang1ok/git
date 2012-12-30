@@ -17,4 +17,5 @@
 	<import resource="resolvers-context.xml" />
 	<import resource="db-context.xml" />
 	<import resource="shiro-context.xml" />
+      <import resource="beans.xml" />
 </beans>
