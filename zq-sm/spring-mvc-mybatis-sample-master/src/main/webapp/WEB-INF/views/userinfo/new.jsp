@@ -67,7 +67,7 @@
 
                         <p>
                             <input type="submit" />
-                            <button id="ajaxSubmit" value="ajaxSubmit" type="button">gggggggggggg</button>
+                            <button id="ajaxSubmit" value="ajaxSubmit" type="button">ajaxSubmit</button>
                         </p>
                     </fieldset>
                 </form:form>
