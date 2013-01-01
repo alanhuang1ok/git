@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.zqgame.framework;
+package com.zqgame.base;
 
 
 import java.io.Serializable;
@@ -15,7 +15,7 @@ import org.mybatis.spring.support.SqlSessionDaoSupport;
  *
  * @author alan
  */
-public class Mybatis3Dao<T extends Object,PK extends Serializable> extends SqlSessionDaoSupport implements IBaseDao<T,PK> {
+public class Basebatis3Dao<T extends Object,PK extends Serializable> extends SqlSessionDaoSupport implements IBaseDao<T,PK> {
 //implements IBaseDao<E,PK>
 
     public String getIbatisSqlMapNamespace() {

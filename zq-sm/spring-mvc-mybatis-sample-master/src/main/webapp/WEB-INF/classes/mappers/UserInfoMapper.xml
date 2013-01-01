@@ -8,19 +8,14 @@
     <select id="UserInfo_getById" parameterType="int" resultType="com.zqgame.models.UserInfo">
         select * from userinfo where id = #{id}
     </select>
-        
+    <update id="UserInfo_update" >
+        UPDATE userinfo SET name = #{name} , age = #{age}  WHERE id = #{id} 
+    </update>
+
+    <delete id="UserInfo_delete">
+        DELETE FROM userinfo WHERE Id = #{id} 
+    </delete>
     <insert id="UserInfo_insert" >
-    <![CDATA[
-        INSERT INTO userinfo (
-                id ,
-        	name ,
-        	age 
-        ) VALUES (
-        #{id} ,
-        	#{name} ,
-        	#{age} 
-        )
-    ]]>
-       
+        INSERT INTO userinfo ( id , name , age  ) VALUES ( #{id} , #{name} , #{age}  )
     </insert>
 </mapper>

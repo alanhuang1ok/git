@@ -1,19 +1,12 @@
+<%@ page session="false" %>
+<%@ include file="/WEB-INF/commons/taglibs.jsp" %>
 <%-- 
     Document   : show
     Created on : 2012-12-30, 14:48:57
     Author     : alan
 --%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page session="false" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,7 +16,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <![endif]-->
     </head>
     <body>
-        <div class="container">
+         <div class="container">
             <h1>
                 UserInfo 
             </h1>
@@ -48,8 +41,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </c:forEach>
             </table>
             <ul>
-                <li> <a  href='<%=path%>/account/new'>添加</a> </li>
-            </ul>
+                  <li> <a  href='<%=path%>/account/new'>add</a> </li>
+                 </ul>
         </div>
     </body>
 </html>

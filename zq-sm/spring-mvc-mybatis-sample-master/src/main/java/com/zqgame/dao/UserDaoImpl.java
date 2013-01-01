@@ -2,19 +2,18 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.zqgame.dao.impl;
+package com.zqgame.dao;
 
-import com.zqgame.framework.Mybatis3Dao;
+import com.zqgame.base.Basebatis3Dao;
 import com.zqgame.models.UserInfo;
-import javax.annotation.Resource;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author alan
  */
-@Resource
-public class UserDaoImpl extends Mybatis3Dao<UserInfo, java.lang.Integer> {
-
+@Repository
+public class UserDaoImpl extends Basebatis3Dao<UserInfo, java.lang.Integer>  {
     @Override
     public String getIbatisSqlMapNamespace() {
         return "UserInfo";

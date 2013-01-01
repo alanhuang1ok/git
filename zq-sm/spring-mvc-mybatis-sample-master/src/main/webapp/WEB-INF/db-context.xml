@@ -32,6 +32,6 @@
 
     <bean id="blogMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
         <property name="mapperInterface" value="com.zqgame.mappers.BlogMapper" />
-        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+<!--        <property name="sqlSessionFactory" ref="sqlSessionFactory" />-->
     </bean>
 </beans>

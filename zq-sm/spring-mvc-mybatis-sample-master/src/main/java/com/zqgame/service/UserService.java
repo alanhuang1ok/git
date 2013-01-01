@@ -2,11 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.zqgame.service.impl;
-
-import com.zqgame.dao.impl.UserDaoImpl;
+package com.zqgame.service;
+ 
+import com.zqgame.dao.UserDaoImpl;
 import com.zqgame.models.UserInfo;
 import java.util.List;
+import javax.annotation.Resource;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,15 +20,14 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     private static final org.slf4j.Logger LOG = LoggerFactory.getLogger(UserService.class);
-    @Autowired
+  
     private UserDaoImpl userDaoImpl;
 
     public UserInfo getModel(int id) {
         UserInfo info = new UserInfo();
-        System.out.println("getModel");
-
+        LOG.info("getModel");
         try {
-            info = userDaoImpl.get(new Integer(1));
+            info = getUserDaoImpl().get(new Integer(1));
         } catch (Exception ex) {
             LOG.error(ex.getMessage());
         }
@@ -37,7 +37,7 @@ public class UserService {
     public List<UserInfo> getAllList() {
         List<UserInfo> all = null;
         try {
-            all = userDaoImpl.getAll();
+            all = getUserDaoImpl().getAll();
         } catch (Exception ex) {
             LOG.error(ex.getMessage());
         }
@@ -48,10 +48,25 @@ public class UserService {
         boolean result = false;
         int resultInt = -1;
         try {
-            resultInt = userDaoImpl.add(info);
+            resultInt = getUserDaoImpl().add(info);
         } catch (Exception ex) {
             LOG.error(ex.getMessage());
         }
         return result;
+    }
+
+    /**
+     * @return the userDaoImpl
+     */
+    public UserDaoImpl getUserDaoImpl() {
+        return userDaoImpl;
+    }
+
+    /**
+     * @param userDaoImpl the userDaoImpl to set
+     */
+    @Resource    
+    public void setUserDaoImpl(UserDaoImpl userDaoImpl) {
+        this.userDaoImpl = userDaoImpl;
     }
 }
