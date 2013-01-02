@@ -1,4 +1,5 @@
 <%@ page session="false" %>
+
 <%@ include file="/WEB-INF/commons/taglibs.jsp" %>
 <%-- 
     Document   : show
@@ -41,7 +42,7 @@
                 </c:forEach>
             </table>
             <ul>
-                  <li> <a  href='<%=path%>/account/new'>add</a> </li>
+                  <li> <a  href='${ctx}/account/new'>add</a> </li>
                  </ul>
         </div>
     </body>

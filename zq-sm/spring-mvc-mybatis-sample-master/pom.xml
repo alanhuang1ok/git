@@ -151,10 +151,23 @@
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
         </dependency>
-       
-       
+        <!--        <dependency>
+            <groupId>alanstudio</groupId>
+            <artifactId>my_extremetable</artifactId>
+            <version>1.0</version>
+        </dependency>-->
+    
+        <dependency>
+            <groupId>org.extremecomponents</groupId>
+            <artifactId>extremecomponents</artifactId>
+        </dependency>
+        <!--        <dependency>
+            <groupId>com.alanstudio</groupId>
+            <artifactId>my_extremetable</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>-->
         <!--i not know   begin-->
-<!--        <dependency>
+        <!--        <dependency>
             <groupId>javax.faces</groupId>
             <artifactId>jsf-impl</artifactId>
             <version>1.2-NIGHTLY_20060227</version>
@@ -169,17 +182,48 @@
             <artifactId>commons-digester</artifactId>
             <version>1.5</version>
         </dependency>
+        <dependency>
+            <groupId>backport-util-concurrent</groupId>
+            <artifactId>backport-util-concurrent</artifactId>
+        </dependency>
         <!--i not know   end -->
+        <dependency>
+            <groupId>com.alanstudio</groupId>
+            <artifactId>zq-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
    
     <build>
         <plugins>
+            <plugin>   
+                <groupId>org.codehaus.mojo</groupId>   
+                <artifactId>build-helper-maven-plugin</artifactId>   
+                <version>1.1</version>   
+                <executions>   
+                    <execution>   
+                        <id>add-source</id>   
+                        <phase>generate-sources</phase>   
+                        <goals>   
+                            <goal>add-source</goal>   
+                        </goals>   
+                        <configuration>   
+                            <sources>   
+                                <source>src/spring/java</source>   
+                            </sources>   
+                        </configuration>   
+                    </execution>   
+                </executions>   
+            </plugin>  
+
+       
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.5</source>
-                    <target>1.5</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
                     <showWarnings>true</showWarnings>
                 </configuration>
             </plugin>
@@ -216,4 +260,7 @@
            
         </plugins>
     </build>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 </project>

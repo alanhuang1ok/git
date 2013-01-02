@@ -16,8 +16,8 @@
 
     <!-- Scans the classpath of this application for @Components to deploy as beans -->
     <context:component-scan base-package="com.zqgame" />
-    <context:component-scan base-package="com.zqgame.dao.impl" />
-    <context:component-scan base-package="com.zqgame.service.impl" />
+    <context:component-scan base-package="com.**.dao" />
+        <context:component-scan base-package="com.**.service" />
     <!-- enable autowire -->
     <context:annotation-config />
 
@@ -44,6 +44,7 @@
 
     <!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources/ directory -->
     <mvc:resources mapping="/resources/**" location="/resources/" />
+    <mvc:resources mapping="/widgets/**" location="/widgets/" />
 
     <!-- Application Message Bundle -->
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">

@@ -5,7 +5,7 @@
 		select * from blogs where id = #{id}
 	</select>
 	<select id="findAllBlogs" parameterType="org.noo.pagination.page.Page" resultType="com.zqgame.models.Blog">
-		select * from blogs
+		select * from blogs  
 	</select>
         <select id="Blog_getAllList"  resultType="com.zqgame.models.Blog">
 		select * from blogs 

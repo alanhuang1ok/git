@@ -32,6 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<ul>
 				<li><a href="blogs">Blogs</a></li>
                                 <li><a href="<%=basePath%>/account/getAllList">用户表操作  UserInfo</a></li>
+                                  <li><a href="<%=basePath%>account/page">分页控件</a></li>
 			</ul>
 		</div>
 	</body>

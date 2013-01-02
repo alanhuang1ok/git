@@ -4,23 +4,26 @@
  */
 package com.zqgame.service;
  
+import com.zqgame.common.page.Page;
+import com.zqgame.common.page.PageRequest;
 import com.zqgame.dao.UserDaoImpl;
 import com.zqgame.models.UserInfo;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.Resource;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author alan
  */
-@Service
+@Component
 public class UserService {
 
     private static final org.slf4j.Logger LOG = LoggerFactory.getLogger(UserService.class);
-  
+    @Autowired
     private UserDaoImpl userDaoImpl;
 
     public UserInfo getModel(int id) {
@@ -68,5 +71,9 @@ public class UserService {
     @Resource    
     public void setUserDaoImpl(UserDaoImpl userDaoImpl) {
         this.userDaoImpl = userDaoImpl;
+    }
+
+    public Page findByPageRequest(PageRequest<Map> pageRequest) {
+       return userDaoImpl.findByPageRequest(pageRequest);
     }
 }
