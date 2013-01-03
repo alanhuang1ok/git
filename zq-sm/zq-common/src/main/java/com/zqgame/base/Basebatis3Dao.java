@@ -89,6 +89,21 @@ public class Basebatis3Dao<T extends Object, PK extends Serializable> extends Sq
         return result;
     }
 
+    public boolean removeById(String classMethod, PK id) throws Exception {
+        boolean flag = false;
+        try {
+            flag = this.getSqlSession().delete(classMethod, id) > 0 ? true : false;
+        } catch (Exception e) {
+            flag = false;
+            throw e;
+        }
+        return flag;
+    }
+
+    public boolean removeById(PK id) throws Exception {
+        return removeById(xmlMapper.getDeleteStatement(), id);
+    }
+
     public boolean remove(T entity) throws Exception {
         return remove(xmlMapper.getDeleteStatement(), entity);
     }
@@ -156,7 +171,7 @@ public class Basebatis3Dao<T extends Object, PK extends Serializable> extends Sq
         }
 
         public String getCountStatementForPaging(String statementName) {
-             return new StringBuffer(statementName).append(SEPARATOR).append("count").toString();
+            return new StringBuffer(statementName).append(SEPARATOR).append("count").toString();
         }
 
         public String getCountQuery() {

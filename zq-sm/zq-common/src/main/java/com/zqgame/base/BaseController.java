@@ -9,6 +9,9 @@ import com.zqgame.common.page.PageRequest;
 import com.zqgame.util.PageRequestFactory;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.util.Assert;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -16,7 +19,9 @@ import org.springframework.web.servlet.ModelAndView;
  * @author alan
  */
 public class BaseController {
-     public PageRequest newPageRequest(HttpServletRequest request, String defaultSortColumns) {
+
+   
+    public PageRequest newPageRequest(HttpServletRequest request, String defaultSortColumns) {
         return PageRequestFactory.newPageRequest(request, defaultSortColumns);
     }
 

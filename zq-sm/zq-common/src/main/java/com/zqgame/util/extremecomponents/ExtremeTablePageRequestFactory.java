@@ -51,7 +51,7 @@ public class ExtremeTablePageRequestFactory {
         Map result = new HashMap();
         for (int i = 0; i < filters.length; i++) {
             Filter filter = filters[i];
-            // alan   result.put(filter.getAlias(), filter.getValue());
+            result.put(filter.getAlias(), filter.getValue());
         }
         return result;
     }

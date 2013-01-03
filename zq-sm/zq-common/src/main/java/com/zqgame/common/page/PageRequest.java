@@ -12,7 +12,7 @@ public class PageRequest<T> implements Serializable {
 	/**
 	 * 过滤参数
 	 */
-	@Deprecated
+	//@Deprecated
 	private T filters;
 	/**
 	 * 页号码,页码从1开始
@@ -31,7 +31,7 @@ public class PageRequest<T> implements Serializable {
 		this(0,0);
 	}
 	
-	@Deprecated
+	//@Deprecated
 	public PageRequest(T filters) {
 		this(0,0,filters);
 	}
@@ -40,7 +40,7 @@ public class PageRequest<T> implements Serializable {
 		this(pageNumber,pageSize,(T)null);
 	}
 	
-	@Deprecated
+	//@Deprecated
 	public PageRequest(int pageNumber, int pageSize, T filters) {
 		this(pageNumber,pageSize,filters,null);
 	}
@@ -49,7 +49,7 @@ public class PageRequest<T> implements Serializable {
 		this(pageNumber,pageSize,null,sortColumns);
 	}
 	
-	@Deprecated
+	//@Deprecated
 	public PageRequest(int pageNumber, int pageSize, T filters,String sortColumns) {
 		this.pageNumber = pageNumber;
 		this.pageSize = pageSize;
@@ -57,12 +57,12 @@ public class PageRequest<T> implements Serializable {
 		setSortColumns(sortColumns);
 	}
 	
-	@Deprecated
+	//@Deprecated
 	public T getFilters() {
 		return filters;
 	}
 
-	@Deprecated
+	//@Deprecated
 	public void setFilters(T filters) {
 		this.filters = filters;
 	}

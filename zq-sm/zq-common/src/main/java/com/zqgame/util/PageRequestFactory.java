@@ -37,7 +37,9 @@ public class PageRequestFactory {
 		PageRequest<Map> result = ExtremeTablePageRequestFactory.createFromLimit(ExtremeTablePage.getLimit(request,defaultPageSize),defaultSortColumns);
     	
 		Map autoIncludeFilters = WebUtils.getParametersStartingWith(request, "s_");
+                Map autoIncludeFilters1 = WebUtils.getParametersStartingWith(request, "");
 		result.getFilters().putAll(autoIncludeFilters);
+                result.getFilters().putAll(autoIncludeFilters1);
 		
     	if(result.getPageSize() > MAX_PAGE_SIZE) {
     		result.setPageSize(MAX_PAGE_SIZE);
