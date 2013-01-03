@@ -4,13 +4,20 @@
  */
 package com.zqgame.models;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 /**
  *
  * @author alan
  */
 public class UserInfo {
+
     private int id;
+    @NotNull
+    @Size(min = 5, max = 50, message = "长度是5-50")
     private String name;
+    @NotNull
     private int age;
 
     /**

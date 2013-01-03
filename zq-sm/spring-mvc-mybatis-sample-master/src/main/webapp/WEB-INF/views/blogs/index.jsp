@@ -26,9 +26,9 @@
             <table>
                 <c:forEach var="blog" items="${blogs}">
                     <tr>
-                        <c:url var="editUrl" value="${blog.id}/edit">
+                        <c:url var="editUrl" value="blogs/${blog.id}/edit">
                         </c:url>
-                        <c:url var="deleteUrl" value="${blog.id}/delete">
+                        <c:url var="deleteUrl" value="blogs/${blog.id}/delete">
                         </c:url>
                         <td>${blog.title}</td>
                         <td>${blog.content}</td>

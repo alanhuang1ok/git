@@ -76,4 +76,12 @@ public class UserService {
     public Page findByPageRequest(PageRequest<Map> pageRequest) {
        return userDaoImpl.findByPageRequest(pageRequest);
     }
+
+    public void removeById(Integer id) {
+        try {
+            userDaoImpl.removeById(id);
+        } catch (Exception ex) {
+            LOG.error(ex.getMessage());
+        }
+    }
 }

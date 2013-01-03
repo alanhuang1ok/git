@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>add</title>
-        <script src="<c:url value="/resources/javascripts/jquery.js" />"></script>
+        <script src="<c:url value="/resources/javascripts/jquery.js" />" > </script>
 
         <script type="text/javascript">
          
@@ -35,7 +35,7 @@
                 $("#ajaxSubmit").click(function() {
                     
                     var jsonuserinfo = $('#form').serializeObject();
-                    $.post("<%=basePath%>account/createByAjax",jsonuserinfo,function(data){
+                    $.post("${ctx}account/createByAjax",jsonuserinfo,function(data){
                         alert(data);
                     });
 
